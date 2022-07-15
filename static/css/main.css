@@ -2,79 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varela+Round&display=swap");
 
 * {
-    --background-primary: #383838;
-    --background-secondary: #066163;
-    --text-primary: #F2F2F2;
-    --text-secondary: #CDBE78;
+  --background-primary: #383838;
+  --background-secondary: #066163;
+  --text-primary: #f2f2f2;
+  --text-secondary: #cdbe78;
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
 }
 
 body {
-    background: var(--background-primary);
-    color: var(--text-primary)
+  background: var(--background-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
+
 #landing {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 #landing .main {
-   
-    /* position: absolute; */
+  /* position: absolute; */
 }
 
 .introduction {
-    font-family: 'Bebas Neue', cursive;
-    width: 50%;
+  width: 50%;
+  transform: translateY(-700px);
+  transition: 0.9s ease;
+}
+
+.introduction.home {
+    transform: translateY(0);
 }
 
 .introduction h1 {
-    font-size: 4em;
+  font-size: 4em;
 }
 .introduction h2 {
-    color: var(--text-secondary);
+  color: var(--text-secondary);
 }
 .socials i {
-    font-size: 1.7em;
-    color: var(--text-secondary);
+  font-size: 1.7em;
+  color: var(--text-secondary);
+  transition: 0.3s ease;
 }
 
+.socials i:hover {
+    font-size: 1.8em;
+    color: var(--text-primary);
+  }
 .nav {
-    position: relative;
-    top: 300px;
-    color: var(--text-secondary)
+  position: relative;
+  top: 300px;
+  color: var(--text-secondary);
+  transform: translateX(700px);
+  transition: 0.9s ease;
+}
+
+.nav.home {
+    transform: translateX(0);
+}
+
+.nav.sticky {
+    position: fixed;
+    top: 100px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    left: 50px;
+}
+
+.nav.sticky span {
+    
 }
 
 .nav a {
-    font-size: 1.5em;
-    transition: 0.4s ease;
-    text-decoration: none;
-    font-family: 'Bebas Neue', cursive;
+  font-size: 1.5em;
+  transition: 0.4s ease;
+  text-decoration: none;
+  font-family: "Bebas Neue", cursive;
 }
 
 .nav a:hover {
-    color: var(--text-primary);
-    text-decoration: underline;
+  color: var(--text-primary);
+  text-decoration: underline;
 }
 
 #skills {
-    height: 100vh;
-    width: 100vw;
+  height: fit-content;
+  width: 100vw;
 }
 
 #skills .main {
-    width: 100vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 #skills .main div {
-    padding: 20px;
+  padding: 20px;
+  margin: 0 70px;
 }
 
-#skills .main i{
-    font-size: 4em;
+#skills .main i {
+  font-size: 4em;
+}
+
+#skills .main h1 {
+  font-size: 2em;
+  margin: 50px 0;
+  font-family: "Bebas Neue", cursive;
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+#skills .main .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-text {
+  visibility: hidden;
+  color: var(--text-primary);
+  transition-property: visibility;
+}
+
+.item:hover .item-text {
+  visibility: visible;
 }
